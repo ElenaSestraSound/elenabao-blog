@@ -1,5 +1,11 @@
+import Layout from "@/components/design-system/layout"
+
 function AllPostsPage() {
-    return <h1>All posts Page</h1>
+    return (
+        <Layout>
+
+        </Layout>
+    )
 }
 
 export default AllPostsPage

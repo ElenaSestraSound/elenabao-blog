@@ -1,6 +1,15 @@
+import { Box, Flex, Heading, Text } from "@chakra-ui/react"
+import * as styles from './styles'
+
 function Hero() {
     return (
-        <h1>HOME PAGE</h1>
+        <Box css={styles.heroContent}>
+            <Box>
+                <Heading as='h1' size='3xl'>IT'S MANTAINABLE</Heading>
+                <Heading as='h1' size='3xl'>IT'S READABLE</Heading>
+                <Heading as='h1' size='3xl'>IT WORKS</Heading>
+            </Box>
+        </Box>
     )
 }
 
