@@ -13,3 +13,10 @@ export type PostModel = {
     content: string,
     featured: boolean
 }
+
+export type AuthorModel = {
+    name: string,
+    image: string,
+    description: string,
+    url?: string
+}
