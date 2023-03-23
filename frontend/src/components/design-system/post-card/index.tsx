@@ -10,7 +10,7 @@ export interface IPostCardProps {
 
 export default function PostCard({ post }: IPostCardProps) {
     return (
-        <Link href={`/posts/${post.slug}`}>
+        <Link href={`/blog/${post.slug}`}>
             <Card maxW='sm'>
                 <Box css={styles.postCardTags}>
                     {post.categories.map(categorie => <Tag m='0 5px;'>{categorie}</Tag>)}

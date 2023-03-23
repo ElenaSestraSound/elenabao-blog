@@ -3,6 +3,17 @@ export type NavMenuItemModel = {
     to: string
 }
 
+export type SanityPost = {
+    title: string,
+    slug: string,
+    author: string,
+    _createdAt: string,
+    featured: boolean,
+    categories: string[],
+    image: string,
+    body: []
+}
+
 export type PostModel = {
     title: string,
     slug: string,

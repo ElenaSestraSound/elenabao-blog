@@ -1,9 +1,11 @@
 import SideHero from '@/components/design-system/side-hero';
+import { PostModel } from '@/lib/types';
 import { Box, Flex } from '@chakra-ui/react';
 import * as React from 'react';
 import FeedItem from './feed-item/feed-item';
 
 export interface IFeedProps {
+    posts: PostModel[]
 }
 
 const DUMMY_POSTS = [{
@@ -38,10 +40,10 @@ const DUMMY_POSTS = [{
 },
 ]
 
-export default function Feed(props: IFeedProps) {
+export default function Feed({ posts }: IFeedProps) {
     return (
         <>
-            {DUMMY_POSTS.map(post => <FeedItem post={post} />)}
+            {posts.map(post => <FeedItem post={post} />)}
         </>
     );
 }

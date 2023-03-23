@@ -1,7 +1,8 @@
 import SideLayout from "@/components/design-system/layout/side-layout"
 import SideHero from "@/components/design-system/side-hero"
 import SinglePost from "@/components/single-post"
-import { AuthorModel, PostModel } from "@/lib/types"
+import { AuthorModel, PostModel, SanityPost } from "@/lib/types"
+import { SanityPostToPostModel } from "@/lib/utils"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { ParsedUrlQuery } from "querystring"
 import client from "../../../../client"
@@ -49,26 +50,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
     const { slug = "" } = context.params as IParams
     const postData = await client.fetch(`*[_type == "post" && slug.current == $slug][0]{
         title, 
-        slug,
+        "slug":slug.current,
         "author": author->name,
         _createdAt,
         featured,
         "categories": categories[]->title,
         "image": mainImage.asset->url,
         body
-    }`, { slug })
+    }`, { slug }) as SanityPost
 
-    const post: PostModel = {
-        title: postData.title,
-        slug: postData.slug,
-        author: postData.author,
-        categories: postData.categories,
-        date: postData._createdAt,
-        image: postData.image,
-        content: postData.body,
-        featured: postData.featured
-    }
-
+    const post = SanityPostToPostModel(postData)
     return {
         props: {
             post: post
