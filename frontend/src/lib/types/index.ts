@@ -10,7 +10,7 @@ export type PostModel = {
     categories: string[],
     date: string,
     image: string,
-    content: string,
+    content: [],
     featured: boolean
 }
 
