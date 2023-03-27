@@ -31,7 +31,7 @@ function AllPostsPage({ posts, author }: IAllPostsPageProps) {
 export default AllPostsPage
 
 export const getStaticProps: GetStaticProps = async () => {
-    const postsRaw = await client.fetch(`*[_type == "post"]{
+    const postsRaw = await client.fetch(`*[_type == "post"] | order(_createdAt desc){
         title, 
         "slug":slug.current,
         "author": author->name,

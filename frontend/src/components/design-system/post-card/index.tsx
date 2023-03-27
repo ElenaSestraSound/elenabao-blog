@@ -20,6 +20,7 @@ export default function PostCard({ post }: IPostCardProps) {
                     alt={post.title}
                     borderRadius='lg'
                     objectFit='cover'
+                    maxH={216}
                 />
                 <CardBody>
                     <Heading size='md'>{post.title}</Heading>
