@@ -25,9 +25,17 @@ export type PostModel = {
     featured: boolean
 }
 
+export type SanityAuthor = {
+    name: string,
+    slug: string,
+    image: string,
+    url: string,
+    bio: []
+}
+
 export type AuthorModel = {
     name: string,
     image: string,
-    description: string,
+    description: [],
     url?: string
 }
