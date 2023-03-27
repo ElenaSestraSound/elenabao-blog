@@ -13,7 +13,7 @@ export default function PostCard({ post }: IPostCardProps) {
         <Link href={`/blog/${post.slug}`}>
             <Card maxW='sm'>
                 <Box css={styles.postCardTags}>
-                    {post.categories.map(categorie => <Tag m='0 5px;'>{categorie}</Tag>)}
+                    {post.categories.map(category => <Tag m='0 5px;' key={category}>{category}</Tag>)}
                 </Box>
                 <Image
                     src={post.image}

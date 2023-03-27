@@ -11,7 +11,6 @@ interface IAllPostsPageProps {
 }
 
 function AllPostsPage({ posts, author }: IAllPostsPageProps) {
-    console.log(author)
     return (
         <SideLayout>
             <Feed posts={posts} />

@@ -3,6 +3,7 @@ import { PostModel } from '@/lib/types';
 import { Box, Flex, Heading, Spacer } from '@chakra-ui/react';
 import * as React from 'react';
 import * as styles from './styles'
+import { v4 as uuid_v4 } from 'uuid'
 
 export interface ILatestsPostsProps {
     posts: PostModel[]
@@ -19,10 +20,10 @@ export function LatestsPosts({ posts }: ILatestsPostsProps) {
                         isLast = true
                     }
                     return (
-                        <>
+                        <React.Fragment key={uuid_v4()}>
                             <PostCard post={post} />
                             {!isLast && <Spacer />}
-                        </>
+                        </React.Fragment>
                     )
                 })}
             </Flex>
