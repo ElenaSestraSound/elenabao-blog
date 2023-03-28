@@ -12,7 +12,7 @@ export interface ILatestsPostsProps {
 export function LatestsPosts({ posts }: ILatestsPostsProps) {
     return (
         <Box css={styles.latestsPosts}>
-            <Heading>LATESTS POSTS</Heading>
+            <Heading color='brand.textPrimary'>LATESTS POSTS</Heading>
             <Flex>
                 {posts.map((post, index) => {
                     let isLast = false

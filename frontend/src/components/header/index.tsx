@@ -5,12 +5,12 @@ import Link from "next/link"
 
 function Header() {
     return (
-        <Layout background='brand.backgroundTerciary'>
+        <Layout background='brand.accent'>
             <Flex align='center'>
                 <Link href='/'>
                     <Flex align='center'>
                         <Image src="/home/bao.png" alt="Elena Bao's picture" borderRadius='full' boxSize='50px' mr='20px' />
-                        <Heading as='h1'>Elena Bao</Heading>
+                        <Heading as='h1' color='brand.textTerciary'>Elena Bao</Heading>
                     </Flex>
                 </Link>
                 <Spacer />

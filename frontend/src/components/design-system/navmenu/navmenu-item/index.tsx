@@ -8,6 +8,7 @@ interface IMenuItemProps {
 
 function NavMenuItem({ item }: IMenuItemProps) {
     return (<Link href={item.to}
+        color='brand.textTerciary'
         _hover={{ 'color': 'brand.highlight' }}
         _activeLink={{ 'color': 'brand.highlight', 'textDecoration': 'underline' }}
         fontWeight={600}

@@ -10,10 +10,14 @@ export interface IPostCardProps {
 export default function PostCard({ post }: IPostCardProps) {
     console.log(post.excerpt)
     return (
-        <Link href={`/blog/${post.slug}`} css={styles.card}>
+        <Link href={`/blog/${post.slug}`} css={styles.card} _hover={{ 'textDecoration': 'none' }}>
             <Card maxW='sm'>
                 <Box css={styles.postCardTags}>
-                    {post.categories.map(category => <Tag m='0 5px;' key={category}>{category}</Tag>)}
+                    {post.categories.map(category => <Tag
+                        m='0 5px;'
+                        key={category}
+                        color='brand.textTerciary'
+                        background={`tag.${category}`}>{category}</Tag>)}
                 </Box>
                 <Image
                     src={post.image}
@@ -23,7 +27,7 @@ export default function PostCard({ post }: IPostCardProps) {
                     maxH={216}
                 />
                 <CardBody>
-                    <Heading size='md' color='brand.textPrimary' mb='10px'>{post.title}</Heading>
+                    <Heading _hover={{ 'color': 'brand.highlight' }} size='md' color='brand.textPrimary' mb='10px'>{post.title}</Heading>
                     {post.excerpt && <Text fontSize='sm' color='brand.textSecondary' textAlign='left'>{post.excerpt}</Text>}
                 </CardBody>
             </Card>

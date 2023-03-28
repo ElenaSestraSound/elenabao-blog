@@ -14,7 +14,7 @@ interface IHomeProps {
 
 export default function Home({ featuredPosts, latestsPosts }: IHomeProps) {
   return (
-    <Layout background='brand.backgroundTerciary'>
+    <Layout background='brand.backgroundSecondary'>
       <Box pt='40px' pb='40px'>
         <Hero />
         <FeaturedPosts posts={featuredPosts} />

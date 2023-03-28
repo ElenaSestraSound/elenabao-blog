@@ -10,7 +10,7 @@ export const postCardTags = css`
 
 export const card = css`
 :hover h2{
-    color: #19A7CE;
-    text-decoration- color: #19A7CE;
+    color: #A4031F;
+    text-decoration- color: #A4031F;
 }
 `

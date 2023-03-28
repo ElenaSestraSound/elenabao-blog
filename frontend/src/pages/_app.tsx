@@ -5,13 +5,20 @@ import type { AppProps } from 'next/app'
 
 export const lightColors = {
   brand: {
-    'highlight': '#19A7CE',
-    'textPrimary': '#000000',
+    'highlight': '#A4031F',
+    'accent': '#FA8C0F ',
+    'textPrimary': '#070707',
     'textSecondary': '#7D8491',
-    'backgroundPrimary': '#146C94',
-    'backgroundSecondary': '#000000',
-    'backgroundTerciary': '#F6F1F1',
+    'textTerciary': '#FFF',
+    'backgroundPrimary': '#070707',
+    'backgroundSecondary': '#f5f0f6ff',
+    'backgroundTerciary': '#fff'
   },
+  tag: {
+    'Redux': '#FA8C0F',
+    'React': '#19A7CE',
+    'Nextjs': '#A4031F'
+  }
 }
 
 const theme = extendTheme({ colors: lightColors })

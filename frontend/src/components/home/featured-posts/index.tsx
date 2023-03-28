@@ -14,7 +14,7 @@ export default function FeaturedPosts({ posts }: IFeaturedPostsProps) {
     return (
         <Flex css={styles.featuredPosts} alignItems='center'>
             <Spacer />
-            <Box>
+            <Box color='brand.textPrimary'>
                 <Heading as='h2' maxW='300px'>CHECK OUT</Heading>
                 <Heading as='h2' maxW='300px'>MY FEATURED</Heading>
                 <Heading as='h2' maxW='300px'>POSTS</Heading>
