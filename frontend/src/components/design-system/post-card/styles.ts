@@ -7,3 +7,10 @@ export const postCardTags = css`
     text-align: right !important;
     z-index: 9999;
 `
+
+export const card = css`
+:hover h2{
+    color: #19A7CE;
+    text-decoration- color: #19A7CE;
+}
+`

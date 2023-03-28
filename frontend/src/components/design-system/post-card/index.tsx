@@ -1,6 +1,5 @@
 import { PostModel } from '@/lib/types';
-import { Card, Heading, CardBody, Box, Image, Tag } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Card, Heading, CardBody, Box, Image, Tag, Link, Text } from '@chakra-ui/react';
 import * as React from 'react';
 import * as styles from './styles'
 
@@ -9,8 +8,9 @@ export interface IPostCardProps {
 }
 
 export default function PostCard({ post }: IPostCardProps) {
+    console.log(post.excerpt)
     return (
-        <Link href={`/blog/${post.slug}`}>
+        <Link href={`/blog/${post.slug}`} css={styles.card}>
             <Card maxW='sm'>
                 <Box css={styles.postCardTags}>
                     {post.categories.map(category => <Tag m='0 5px;' key={category}>{category}</Tag>)}
@@ -23,7 +23,8 @@ export default function PostCard({ post }: IPostCardProps) {
                     maxH={216}
                 />
                 <CardBody>
-                    <Heading size='md'>{post.title}</Heading>
+                    <Heading size='md' color='brand.textPrimary' mb='10px'>{post.title}</Heading>
+                    {post.excerpt && <Text fontSize='sm' color='brand.textSecondary' textAlign='left'>{post.excerpt}</Text>}
                 </CardBody>
             </Card>
         </Link>

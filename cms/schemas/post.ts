@@ -55,6 +55,12 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'string',
+      validation: Rule => Rule.max(255).warning("Excerpt should not be more than 255 characters")
+    }),
   ],
 
   preview: {

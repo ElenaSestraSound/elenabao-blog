@@ -20,7 +20,13 @@ export default function FeaturedPosts({ posts }: IFeaturedPostsProps) {
                 <Heading as='h2' maxW='300px'>POSTS</Heading>
                 <ArrowForwardIcon />
             </Box>
-            {posts.map(post => <PostCard post={post} key={uuid_v4()} />)}
+            <Spacer />
+            {posts.map((post, index) => {
+                return <>
+                    <PostCard post={post} key={uuid_v4()} />
+                    {index == 0 && <Spacer />}
+                </>
+            })}
         </Flex>
     );
 }

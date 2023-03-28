@@ -6,6 +6,7 @@ function SanityPostToPostModel(sanityPost: SanityPost): PostModel {
         title: sanityPost.title,
         slug: sanityPost.slug,
         author: sanityPost.author,
+        excerpt: sanityPost.excerpt,
         categories: sanityPost.categories,
         date: sanityPost._createdAt,
         image: sanityPost.image,
@@ -25,9 +26,11 @@ function SanityAuthorToAuthorModel(authorPost: SanityAuthor): AuthorModel {
 
 export async function getSinglePost(slug: string): Promise<PostModel> {
     const post = await client.fetch(`*[_type == "post" && slug.current == $slug][0]{
-        title, 
+        title,
+        excerpt, 
         "slug":slug.current,
         "author": author->name,
+        "excerpt": array::join(string::split((pt::text(body)), "")[0..255], "") + "...",
         _createdAt,
         featured,
         "categories": categories[]->title,
@@ -39,7 +42,8 @@ export async function getSinglePost(slug: string): Promise<PostModel> {
 
 export async function getAllPosts(): Promise<PostModel[]> {
     const posts = await client.fetch(`*[_type == "post"] | order(_createdAt desc){
-        title, 
+        title,
+        excerpt,
         "slug":slug.current,
         "author": author->name,
         _createdAt,
@@ -53,8 +57,9 @@ export async function getAllPosts(): Promise<PostModel[]> {
 }
 
 export async function getFeaturedPosts(): Promise<PostModel[]> {
-    const featuredPosts = await client.fetch(`*[_type == "post" && featured==true]{
-        title, 
+    const featuredPosts = await client.fetch(`*[_type == "post" && featured==true] {
+        title,
+        excerpt,
         "slug":slug.current,
         "author": author->name,
         _createdAt,
@@ -63,7 +68,6 @@ export async function getFeaturedPosts(): Promise<PostModel[]> {
         "image": mainImage.asset->url,
         body
     }`)
-
     return featuredPosts.map((post: SanityPost) => SanityPostToPostModel(post))
 }
 
