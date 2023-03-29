@@ -4,6 +4,7 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
 import * as styles from "./styles"
 import { v4 as uuid_v4 } from 'uuid'
+import { Fragment } from "react";
 
 interface IFeaturedPostsProps {
     posts: PostModel[]
@@ -22,10 +23,10 @@ export default function FeaturedPosts({ posts }: IFeaturedPostsProps) {
             </Box>
             <Spacer />
             {posts.map((post, index) => {
-                return <>
-                    <PostCard post={post} key={uuid_v4()} />
+                return (<Fragment key={uuid_v4()}>
+                    <PostCard post={post} />
                     {index == 0 && <Spacer />}
-                </>
+                </Fragment>)
             })}
         </Flex>
     );

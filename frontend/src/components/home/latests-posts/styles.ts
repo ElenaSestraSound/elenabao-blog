@@ -6,4 +6,15 @@ export const latestsPosts = css`
     >h2 {
         margin-bottom: 40px;
     }
+
+    @media screen and (max-width: 1200px) {
+        >div {
+            display: block;
+            padding: 0 20px;
+    
+            div.css-17xejub {
+                display: none;
+            }
+        }
+    }
 `

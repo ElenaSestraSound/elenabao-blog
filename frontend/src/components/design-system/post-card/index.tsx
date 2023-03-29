@@ -8,10 +8,9 @@ export interface IPostCardProps {
 }
 
 export default function PostCard({ post }: IPostCardProps) {
-    console.log(post.excerpt)
     return (
         <Link href={`/blog/${post.slug}`} css={styles.card} _hover={{ 'textDecoration': 'none' }}>
-            <Card maxW='sm'>
+            <Card maxW='sm' align='center'>
                 <Box css={styles.postCardTags}>
                     {post.categories.map(category => <Tag
                         m='0 5px;'

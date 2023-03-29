@@ -28,8 +28,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const featuredPosts = await getFeaturedPosts()
   const latestsPosts = await getLatestsPosts()
 
-  console.log(featuredPosts)
-
   return {
     props: {
       featuredPosts, latestsPosts
