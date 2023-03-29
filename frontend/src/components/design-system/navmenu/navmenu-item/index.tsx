@@ -12,7 +12,7 @@ function NavMenuItem({ item }: IMenuItemProps) {
         _hover={{ 'color': 'brand.highlight' }}
         _activeLink={{ 'color': 'brand.highlight', 'textDecoration': 'underline' }}
         fontWeight={600}
-        fontSize='xl'>{item.name}</ Link>)
+        fontSize={['md', 'xl']}>{item.name}</ Link>)
 }
 
 export default NavMenuItem
