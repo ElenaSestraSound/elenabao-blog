@@ -11,20 +11,22 @@ export default function PostCard({ post }: IPostCardProps) {
     return (
         <Link href={`/blog/${post.slug}`} css={styles.card} _hover={{ 'textDecoration': 'none' }}>
             <Card maxW='sm' align='center'>
-                <Box css={styles.postCardTags}>
-                    {post.categories.map(category => <Tag
-                        m='0 5px;'
-                        key={category}
-                        color='brand.textTerciary'
-                        background={`tag.${category}`}>{category}</Tag>)}
+                <Box>
+                    <Box css={styles.postCardTags}>
+                        {post.categories.map(category => <Tag
+                            m='0 5px;'
+                            key={category}
+                            color='brand.textTerciary'
+                            background={`tag.${category}`}>{category}</Tag>)}
+                    </Box>
+                    <Image
+                        src={post.image}
+                        alt={post.title}
+                        borderRadius='lg'
+                        objectFit='cover'
+                        maxH={216}
+                    />
                 </Box>
-                <Image
-                    src={post.image}
-                    alt={post.title}
-                    borderRadius='lg'
-                    objectFit='cover'
-                    maxH={216}
-                />
                 <CardBody>
                     <Heading _hover={{ 'color': 'brand.highlight' }} size='md' color='brand.textPrimary' mb='5px' textAlign='left'>{post.title}</Heading>
                     <Text fontSize='xs' color='brand.accent' mb='10px' textAlign='left'>{post.date}</Text>

@@ -3,10 +3,12 @@ import { css } from "@emotion/react";
 export const postCardTags = css`
     width: fit-content;
     position: absolute;
-    left: 10px;
-    top: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 `
-
+export const imageCardBox = css`
+    width: fit-content;
+`
 export const card = css`
 width: fit-content;
 
