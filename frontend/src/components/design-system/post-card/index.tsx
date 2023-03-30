@@ -26,7 +26,8 @@ export default function PostCard({ post }: IPostCardProps) {
                     maxH={216}
                 />
                 <CardBody>
-                    <Heading _hover={{ 'color': 'brand.highlight' }} size='md' color='brand.textPrimary' mb='10px'>{post.title}</Heading>
+                    <Heading _hover={{ 'color': 'brand.highlight' }} size='md' color='brand.textPrimary' mb='5px' textAlign='left'>{post.title}</Heading>
+                    <Text fontSize='xs' color='brand.accent' mb='10px' textAlign='left'>{post.date}</Text>
                     {post.excerpt && <Text fontSize='sm' color='brand.textSecondary' textAlign='left'>{post.excerpt}</Text>}
                 </CardBody>
             </Card>

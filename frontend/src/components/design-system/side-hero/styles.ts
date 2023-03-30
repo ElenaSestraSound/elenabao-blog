@@ -5,6 +5,12 @@ export const sideHero = css`
     div > * {
         margin-bottom: 15px;
     }
+    @media screen and (max-width: 900px) {
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
 `
 
 export const sideHeroImage = css`

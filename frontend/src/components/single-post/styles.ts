@@ -1,5 +1,10 @@
 import { css } from "@emotion/react";
 
-export const feedItem = css`
-    margin-bottom: 40px;
+export const postContent = css`
+    margin: 0 !important;
+
+    p {
+        margin-bottom: 20px;
+        color: #7D8491
+    }
 `
