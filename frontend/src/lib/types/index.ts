@@ -8,7 +8,7 @@ export type SanityPost = {
     slug: string,
     author: string,
     excerpt: string,
-    _createdAt: string,
+    publishedAt: string,
     featured: boolean,
     categories: string[],
     image: string,

@@ -8,6 +8,7 @@ export interface IPostCardProps {
 }
 
 export default function PostCard({ post }: IPostCardProps) {
+    const date = new Date(post.date)
     return (
         <Link href={`/blog/${post.slug}`} css={styles.card} _hover={{ 'textDecoration': 'none' }}>
             <Card maxW='sm' align='center'>
@@ -29,7 +30,7 @@ export default function PostCard({ post }: IPostCardProps) {
                 </Box>
                 <CardBody>
                     <Heading _hover={{ 'color': 'brand.highlight' }} size='md' color='brand.textPrimary' mb='5px' textAlign='left'>{post.title}</Heading>
-                    <Text fontSize='xs' color='brand.accent' mb='10px' textAlign='left'>{post.date}</Text>
+                    <Text fontSize='xs' color='brand.accent' mb='10px' textAlign='left'>{`${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`}</Text>
                     {post.excerpt && <Text fontSize='sm' color='brand.textSecondary' textAlign='left'>{post.excerpt}</Text>}
                 </CardBody>
             </Card>

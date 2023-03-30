@@ -48,7 +48,11 @@ export default defineType({
     defineField({
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime',
+      type: 'date',
+      initialValue: (new Date()).toISOString(),
+      options: {
+        dateFormat: 'DD-MM-YYYY',
+      }
     }),
     defineField({
       name: 'body',

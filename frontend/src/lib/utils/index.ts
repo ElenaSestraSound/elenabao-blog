@@ -8,7 +8,7 @@ function SanityPostToPostModel(sanityPost: SanityPost): PostModel {
         author: sanityPost.author,
         excerpt: sanityPost.excerpt,
         categories: sanityPost.categories,
-        date: sanityPost._createdAt,
+        date: sanityPost.publishedAt,
         image: sanityPost.image,
         content: sanityPost.body,
         featured: sanityPost.featured
@@ -30,7 +30,7 @@ export async function getSinglePost(slug: string): Promise<PostModel> {
         excerpt, 
         "slug":slug.current,
         "author": author->name,
-        _createdAt,
+        publishedAt,
         featured,
         "categories": categories[]->title,
         "image": mainImage.asset->url,
@@ -40,12 +40,12 @@ export async function getSinglePost(slug: string): Promise<PostModel> {
 }
 
 export async function getAllPosts(): Promise<PostModel[]> {
-    const posts = await client.fetch(`*[_type == "post"] | order(_createdAt desc){
+    const posts = await client.fetch(`*[_type == "post"] | order(publishedAt desc){
         title,
         excerpt,
         "slug":slug.current,
         "author": author->name,
-        _createdAt,
+        publishedAt,
         featured,
         "categories": categories[]->title,
         "image": mainImage.asset->url,
@@ -61,7 +61,7 @@ export async function getFeaturedPosts(): Promise<PostModel[]> {
         excerpt,
         "slug":slug.current,
         "author": author->name,
-        _createdAt,
+        publishedAt,
         featured,
         "categories": categories[]->title,
         "image": mainImage.asset->url,
