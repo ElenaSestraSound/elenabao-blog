@@ -2,7 +2,7 @@ import { PostModel } from '@/lib/types';
 import { Box, Heading, Image, Text } from '@chakra-ui/react';
 import { PortableText } from '@portabletext/react';
 import * as styles from './styles'
-import { ptComponents } from '../design-system/pocket-text-components';
+import { ptComponents } from '../design-system/portable-text-components';
 
 export interface IFeedItemProps {
     post: PostModel
