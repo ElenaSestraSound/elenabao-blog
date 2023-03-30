@@ -30,7 +30,6 @@ export async function getSinglePost(slug: string): Promise<PostModel> {
         excerpt, 
         "slug":slug.current,
         "author": author->name,
-        "excerpt": array::join(string::split((pt::text(body)), "")[0..255], "") + "...",
         _createdAt,
         featured,
         "categories": categories[]->title,
