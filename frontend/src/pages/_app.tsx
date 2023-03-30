@@ -1,3 +1,4 @@
+import Footer from '@/components/footer'
 import Header from '@/components/header'
 import '@/styles/globals.css'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ChakraProvider>
   )
 }
