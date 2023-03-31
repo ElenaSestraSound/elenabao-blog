@@ -5,7 +5,6 @@ import Layout from '@/components/design-system/layout'
 import { PostModel } from '@/lib/types'
 import { getFeaturedPosts, getLatestsPosts } from '@/lib/utils'
 import { GetStaticProps } from 'next'
-import { Box } from '@chakra-ui/react'
 
 interface IHomeProps {
   featuredPosts: PostModel[],
@@ -15,11 +14,9 @@ interface IHomeProps {
 export default function Home({ featuredPosts, latestsPosts }: IHomeProps) {
   return (
     <Layout background='brand.backgroundSecondary'>
-      <Box pt='40px' pb='40px'>
-        <Hero />
-        <FeaturedPosts posts={featuredPosts} />
-        <LatestsPosts posts={latestsPosts} />
-      </Box>
+      <Hero />
+      <FeaturedPosts posts={featuredPosts} />
+      <LatestsPosts posts={latestsPosts} />
     </Layout>
   )
 }

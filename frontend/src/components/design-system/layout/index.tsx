@@ -10,7 +10,7 @@ interface ILayoutProps {
 function Layout({ background, children, css }: ILayoutProps) {
     return (
         <Box bg={background} css={css}>
-            <Box margin='0 auto' maxW={1240}>
+            <Box margin='0 auto' maxW={1240} pt='40px' pb='40px'>
                 {children}
             </Box>
         </Box>

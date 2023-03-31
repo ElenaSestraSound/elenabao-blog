@@ -4,13 +4,14 @@ import Layout from '..';
 import { sideLayout } from './styles';
 
 export interface ISideLayoutProps {
-    children: React.ReactNode
+    children: React.ReactNode,
+    background?: string
 }
 
-export default function SideLayout({ children }: ISideLayoutProps) {
+export default function SideLayout({ children, background }: ISideLayoutProps) {
     const arrayChildren = React.Children.toArray(children)
     return (
-        <Layout>
+        <Layout background={background}>
             <Flex css={sideLayout}>
                 <Box w='70%'>
                     {arrayChildren[0]}

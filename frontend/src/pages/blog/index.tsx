@@ -3,6 +3,7 @@ import SideHero from "@/components/design-system/side-hero"
 import Feed from "@/components/posts/feed"
 import { AuthorModel, PostModel, } from "@/lib/types"
 import { getAllPosts, getAuthor } from "@/lib/utils"
+import { Box } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
 
 interface IAllPostsPageProps {
@@ -12,7 +13,7 @@ interface IAllPostsPageProps {
 
 function AllPostsPage({ posts, author }: IAllPostsPageProps) {
     return (
-        <SideLayout>
+        <SideLayout background="brand.backgroundSecondary">
             <Feed posts={posts} />
             <SideHero author={author} />
         </SideLayout>

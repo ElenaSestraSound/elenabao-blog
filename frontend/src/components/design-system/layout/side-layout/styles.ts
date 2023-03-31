@@ -1,7 +1,6 @@
 import { css } from "@emotion/react";
 
 export const sideLayout = css`
-    margin-top: 40px;
     padding: 0 20px;
     >div:last-of-type {
         margin-left: 20px;

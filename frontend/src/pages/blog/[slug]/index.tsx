@@ -14,7 +14,7 @@ interface ISinglePostPageProps {
 
 export default function SinglePostPage({ post, author }: ISinglePostPageProps) {
     return (
-        <SideLayout>
+        <SideLayout background="brand.backgroundSecondary">
             <SinglePost post={post} />
             <SideHero author={author} />
         </SideLayout>
