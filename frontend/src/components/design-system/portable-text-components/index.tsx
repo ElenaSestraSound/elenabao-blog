@@ -3,6 +3,7 @@ import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
 import imageUrlBuilder from '@sanity/image-url'
 import client from "../../../../client"
+import { getId } from "@/components/single-post/parseOutline"
 
 export const ptComponents = {
     types: {
@@ -25,17 +26,21 @@ export const ptComponents = {
         },
     },
     block: {
-        h1: ({ children }: any) => {
-            return (<Heading as='h1' fontSize='3xl'>{children[0]}</Heading>)
+        h1: ({ children, value }: any) => {
+            const id = getId(value)
+            return (<Heading as='h1' fontSize='3xl' id={id}>{children[0]}</Heading>)
         },
-        h2: ({ children }: any) => {
-            return (<Heading as='h2' fontSize='2xl'>{children[0]}</Heading>)
+        h2: ({ children, value }: any) => {
+            const id = getId(value)
+            return (<Heading as='h2' fontSize='2xl' id={id}>{children[0]}</Heading>)
         },
-        h3: ({ children }: any) => {
-            return (<Heading as='h3' fontSize='xl'>{children[0]}</Heading>)
+        h3: ({ children, value }: any) => {
+            const id = getId(value)
+            return (<Heading as='h3' fontSize='xl' id={id}>{children[0]}</Heading>)
         },
-        h4: ({ children }: any) => {
-            return (<Heading as='h4' fontSize='lg'>{children[0]}</Heading>)
+        h4: ({ children, value }: any) => {
+            const id = getId(value)
+            return (<Heading as='h4' fontSize='lg' id={id}>{children[0]}</Heading>)
         },
         blockquote: ({ children }: any) =>
             <Text
