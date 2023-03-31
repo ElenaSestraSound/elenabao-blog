@@ -1,6 +1,6 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
+import { nightOwl as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism"
+import { Heading, Image, Text } from "@chakra-ui/react"
 import imageUrlBuilder from '@sanity/image-url'
 import client from "../../../../client"
 import { getId } from "@/components/single-post/parseOutline"
@@ -20,7 +20,7 @@ export const ptComponents = {
             )
         },
         code: ({ value }: any) => {
-            return (<SyntaxHighlighter language={value.language} style={atomDark}>
+            return (<SyntaxHighlighter language={value.language} style={codeTheme} customStyle={{ marginBottom: '20px' }}>
                 {value.code}
             </SyntaxHighlighter>)
         },
