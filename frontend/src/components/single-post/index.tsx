@@ -5,6 +5,7 @@ import * as styles from './styles'
 import { ptComponents } from '../design-system/portable-text-components';
 import parseOutline from './parseOutline';
 import TableOfContents from './TableOfContents';
+import PostHeader from './post-header';
 
 export interface IFeedItemProps {
     post: PostModel
@@ -16,12 +17,11 @@ export default function SinglePost({ post }: IFeedItemProps) {
     return (
         <Card>
             <CardBody>
-                <Image src={post.image} alt={post.title} borderRadius='lg' mb='20px' />
-                <Flex align='baseline' mb='20px'>
-                    <Heading color='brand.textPrimary'>{post.title}</Heading>
-                    <Spacer />
-                    <Text fontSize='md' color='brand.accent' mb='10px' p='0 5px;'>{post.date}</Text>
-                </Flex>
+                <PostHeader
+                    image={post.image}
+                    title={post.title}
+                    date={post.date}
+                    categories={post.categories} />
                 <TableOfContents outline={outline} />
                 <Box css={styles.postContent}>
                     <PortableText
