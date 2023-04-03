@@ -4,7 +4,7 @@ import Layout from "../design-system/layout";
 export default function Footer() {
     return (
         <Layout background="brand.accent">
-            <Box textAlign='center' w='fit-content' m='0 auto' p='40px 20px'>
+            <Box textAlign='center' w='fit-content' m='0 auto'>
                 <Flex align='center'>
                     <Image src="/home/bao.png" alt="Elena Bao's picture" borderRadius='full' boxSize='50px' mr='20px' />
                     <Heading as='h1' color='brand.textTerciary'>Elena Bao</Heading>

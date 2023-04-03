@@ -11,4 +11,17 @@ export const heroContent = css`
         text-align: right;
         margin-bottom: 40px;
     }
+
+    :before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        background-color: black;
+        z-index: -3;
+      }
 `
