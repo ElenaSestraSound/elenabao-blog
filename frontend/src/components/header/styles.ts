@@ -12,3 +12,19 @@ export const header = css`
     }
 }
 `
+
+export const sticky = css`
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+    transition: all 0.4s ease-out;
+    transform: translateY(0);
+`
+
+export const hiddenHeader = css`
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+    transform: translateY(-90px);
+    transition: all 0.4s ease-out;
+`

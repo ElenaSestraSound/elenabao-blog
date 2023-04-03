@@ -2,11 +2,24 @@ import { Box, Flex, Heading, Image, Spacer } from "@chakra-ui/react"
 import Layout from "@/components/design-system/layout"
 import NavMenu from "../design-system/navmenu"
 import Link from "next/link"
-import { header } from "./styles"
+import { header, hiddenHeader, sticky } from "./styles"
+import { useEffect, useState } from "react"
 
 function Header() {
+    const [y, setY] = useState<undefined | number>(undefined);
+    const [showDesktopHeader, setShowDesktopHeader] = useState(true);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (y) {
+                setShowDesktopHeader(y > window.scrollY);
+            }
+            setY(window.scrollY);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [y]);
     return (
-        <Box bg='brand.accent'>
+        <Box bg='brand.accent' css={showDesktopHeader ? sticky : hiddenHeader}>
             <Box margin='0 auto' maxW={1240}>
                 <Flex align='center' css={header}>
                     <Link href='/'>
