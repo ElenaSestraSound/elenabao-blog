@@ -6,6 +6,7 @@ import { ptComponents } from '../design-system/portable-text-components';
 import parseOutline from './parseOutline';
 import TableOfContents from './TableOfContents';
 import PostHeader from './post-header';
+import { slideInBottom } from '../design-system/animations';
 
 export interface IFeedItemProps {
     post: PostModel
@@ -15,7 +16,7 @@ export interface IFeedItemProps {
 export default function SinglePost({ post }: IFeedItemProps) {
     const outline = parseOutline(post.content)
     return (
-        <Card>
+        <Card css={slideInBottom}>
             <CardBody>
                 <PostHeader
                     image={post.image}

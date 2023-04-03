@@ -1,5 +1,10 @@
 import { css } from "@emotion/react";
 
+export const container = css`
+    height: 1px;
+
+`
+
 export const header = css`
 @media screen and (max-width: 560px) {
     h1 {

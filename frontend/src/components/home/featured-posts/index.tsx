@@ -2,9 +2,10 @@ import PostCard from "@/components/design-system/post-card";
 import { PostModel } from "@/lib/types";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
-import * as styles from "./styles"
 import { v4 as uuid_v4 } from 'uuid'
 import { Fragment } from "react";
+import { featuredPosts } from "./styles";
+import { slideInLeft } from "@/components/design-system/animations";
 
 interface IFeaturedPostsProps {
     posts: PostModel[]
@@ -13,7 +14,7 @@ interface IFeaturedPostsProps {
 
 export default function FeaturedPosts({ posts }: IFeaturedPostsProps) {
     return (
-        <Flex css={styles.featuredPosts} alignItems='center'>
+        <Flex css={[featuredPosts, slideInLeft]} alignItems='center'>
             <Spacer />
             <Box color='brand.textPrimary'>
                 <Heading as='h2' maxW='300px'>CHECK OUT</Heading>
