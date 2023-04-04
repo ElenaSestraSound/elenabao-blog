@@ -5,6 +5,7 @@ import { AuthorModel, PostModel, } from "@/lib/types"
 import { getAllPosts, getAuthor } from "@/lib/utils"
 import { Box } from "@chakra-ui/react"
 import { GetStaticProps } from "next"
+import Head from "next/head"
 
 interface IAllPostsPageProps {
     posts: PostModel[],
@@ -13,10 +14,19 @@ interface IAllPostsPageProps {
 
 function AllPostsPage({ posts, author }: IAllPostsPageProps) {
     return (
-        <SideLayout background="brand.backgroundSecondary">
-            <Feed posts={posts} />
-            <SideHero author={author} />
-        </SideLayout>
+        <>
+            <Head>
+                <title>Elena Bao&apos;s Blog</title>
+                <meta property='description' content='Welcome to my web development blog!' key='desc' />
+                <meta property='og:title' content="Elena Bao's Blog" />
+                <meta property='og:description' content='Welcome to my web development blog!' />
+                <meta property='og:image' content='/home/bao.png' />
+            </Head>
+            <SideLayout background="brand.backgroundSecondary">
+                <Feed posts={posts} />
+                <SideHero author={author} />
+            </SideLayout>
+        </>
     )
 }
 

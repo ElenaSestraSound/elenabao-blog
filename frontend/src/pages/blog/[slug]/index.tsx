@@ -6,6 +6,7 @@ import { getAuthor, getSinglePost } from "@/lib/utils"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { ParsedUrlQuery } from "querystring"
 import client from "../../../../client"
+import Head from "next/head"
 
 interface ISinglePostPageProps {
     post: PostModel,
@@ -27,10 +28,19 @@ export default function SinglePostPage({ post = {
     description: []
 } }: ISinglePostPageProps) {
     return (
-        <SideLayout background="brand.backgroundSecondary">
-            <SinglePost post={post} />
-            <SideHero author={author} />
-        </SideLayout>
+        <>
+            <Head>
+                <title>{post.title}</title>
+                <meta property='description' content={post.excerpt} key='desc' />
+                <meta property='og:title' content={post.title} />
+                <meta property='og:description' content={post.excerpt} />
+                <meta property='og:image' content={post.image} />
+            </Head>
+            <SideLayout background="brand.backgroundSecondary">
+                <SinglePost post={post} />
+                <SideHero author={author} />
+            </SideLayout>
+        </>
     )
 }
 

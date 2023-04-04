@@ -5,6 +5,7 @@ import Layout from '@/components/design-system/layout'
 import { PostModel } from '@/lib/types'
 import { getFeaturedPosts, getLatestsPosts } from '@/lib/utils'
 import { GetStaticProps } from 'next'
+import Head from 'next/head'
 
 interface IHomeProps {
   featuredPosts: PostModel[],
@@ -13,11 +14,20 @@ interface IHomeProps {
 
 export default function Home({ featuredPosts, latestsPosts }: IHomeProps) {
   return (
-    <Layout background='brand.backgroundSecondary'>
-      <Hero />
-      <FeaturedPosts posts={featuredPosts} />
-      <LatestsPosts posts={latestsPosts} />
-    </Layout>
+    <>
+      <Head>
+        <title>Elena Bao&apos;s Blog</title>
+        <meta property='description' content='Welcome to my web development blog!' key='desc' />
+        <meta property='og:title' content="Elena Bao's Blog" />
+        <meta property='og:description' content='Welcome to my web development blog!' />
+        <meta property='og:image' content='/home/bao.png' />
+      </Head>
+      <Layout background='brand.backgroundSecondary'>
+        <Hero />
+        <FeaturedPosts posts={featuredPosts} />
+        <LatestsPosts posts={latestsPosts} />
+      </Layout>
+    </>
   )
 }
 
