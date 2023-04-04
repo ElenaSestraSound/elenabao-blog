@@ -26,7 +26,7 @@ export default function TableOfContents({ outline, title = "Table of contents" }
                 <AccordionPanel pb={4}>
                     {outline.map((item, index) => {
                         return (
-                            <List>
+                            <List key={index}>
                                 <Link href={`#${item.slug}`}
                                     fontWeight={600}
                                     fontSize='lg'
