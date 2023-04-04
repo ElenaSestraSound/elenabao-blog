@@ -12,7 +12,20 @@ interface ISinglePostPageProps {
     author: AuthorModel
 }
 
-export default function SinglePostPage({ post, author }: ISinglePostPageProps) {
+export default function SinglePostPage({ post = {
+    title: "",
+    slug: "",
+    author: "",
+    categories: [],
+    date: "",
+    image: "",
+    content: [],
+    featured: false
+}, author = {
+    name: "",
+    image: "",
+    description: []
+} }: ISinglePostPageProps) {
     return (
         <SideLayout background="brand.backgroundSecondary">
             <SinglePost post={post} />

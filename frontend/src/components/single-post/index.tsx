@@ -14,7 +14,7 @@ export interface IFeedItemProps {
 
 
 export default function SinglePost({ post }: IFeedItemProps) {
-    const outline = parseOutline(post.content)
+    const outline = post.content ? parseOutline(post.content) : []
     return (
         <Card css={slideInBottom}>
             <CardBody>
