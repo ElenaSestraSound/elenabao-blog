@@ -76,6 +76,22 @@ export async function getLatestsPosts(): Promise<PostModel[]> {
     return latestsPosts
 }
 
+export async function searchPosts(keywords: string): Promise<PostModel[]> {
+    console.log(keywords)
+    const posts = await client.fetch(`*[_type == "post"][[title, body] match [${keywords}]] {
+        title,
+        excerpt,
+        "slug":slug.current,
+        "author": author->name,
+        publishedAt,
+        featured,
+        "categories": categories[]->title,
+        "image": mainImage.asset->url,
+        body
+    }`)
+    return posts.map((post: SanityPost) => SanityPostToPostModel(post))
+}
+
 export async function getAuthor(name: string): Promise<AuthorModel> {
     const author = await client.fetch(`*[_type == "author" && name=='Elena Bao'][0]{
         name, 
