@@ -22,11 +22,9 @@ export default function Home({ featuredPosts, latestsPosts }: IHomeProps) {
         <meta property='og:description' content='Welcome to my web development blog!' />
         <meta property='og:image' content='/home/bao.png' />
       </Head>
-      <Layout background='brand.backgroundSecondary'>
-        <Hero />
-        <FeaturedPosts posts={featuredPosts} />
-        <LatestsPosts posts={latestsPosts} />
-      </Layout>
+      <Hero />
+      <FeaturedPosts posts={featuredPosts} />
+      <LatestsPosts posts={latestsPosts} />
     </>
   )
 }

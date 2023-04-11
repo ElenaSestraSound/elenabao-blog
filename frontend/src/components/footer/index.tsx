@@ -1,9 +1,8 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import Layout from "../design-system/layout";
 
 export default function Footer() {
     return (
-        <Layout background="brand.accent">
+        <Box bgColor="brand.accent" p='40px 0' mt='auto'>
             <Box textAlign='center' w='fit-content' m='0 auto'>
                 <Flex align='center'>
                     <Image src="/home/bao.png" alt="Elena Bao's picture" borderRadius='full' boxSize='50px' mr='20px' />
@@ -13,6 +12,6 @@ export default function Footer() {
                     Copyright © 2023 Elena Bañón
                 </Text>
             </Box>
-        </Layout>
+        </Box>
     );
 }

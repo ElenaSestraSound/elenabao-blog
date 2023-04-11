@@ -29,35 +29,34 @@ export default function Search() {
             })
     }
 
-    return (
-        <Layout background='brand.backgroundSecondary'>
-            <Box textAlign='center' mb='40px'>
-                <Input
-                    w='50%'
-                    minW='200px'
-                    backgroundColor='brand.backgroundTerciary'
-                    onChange={searchOnChange}
-                    placeholder='Type here...' />
-                <Button
-                    type='submit'
-                    ml='10px'
-                    verticalAlign='baseline'
-                    color='brand.textTerciary'
-                    bgColor='brand.accent'
-                    onClick={fetchPosts}>
-                    Search</Button>
-            </Box>
-            {hasError && <Text color='red' textAlign='center' fontWeight={600}>{hasError}</Text>}
-            <Box maxW='900px' m='0 auto'>
-                {isLoading && <Box w='fit-content' m='0 auto'><Spinner color='brand.highlight' /></Box>}
-                {searchResult.length > 0 ?
-                    <Feed posts={searchResult} /> :
-                    <Text textAlign='center' fontWeight={600} color='brand.textSecondary'>
-                        Unable to find posts with these search parameters
-                    </Text>
-                }
-            </Box>
-        </Layout>
+    return (<>
+        <Box textAlign='center' mb='40px'>
+            <Input
+                w='50%'
+                minW='200px'
+                backgroundColor='brand.backgroundTerciary'
+                onChange={searchOnChange}
+                placeholder='Type here...' />
+            <Button
+                type='submit'
+                ml='10px'
+                verticalAlign='baseline'
+                color='brand.textTerciary'
+                bgColor='brand.accent'
+                onClick={fetchPosts}>
+                Search</Button>
+        </Box>
+        {hasError && <Text color='red' textAlign='center' fontWeight={600}>{hasError}</Text>}
+        <Box maxW='900px' m='0 auto'>
+            {isLoading && <Box w='fit-content' m='0 auto'><Spinner color='brand.highlight' /></Box>}
+            {searchResult.length > 0 ?
+                <Feed posts={searchResult} /> :
+                <Text textAlign='center' fontWeight={600} color='brand.textSecondary'>
+                    Unable to find posts with these search parameters
+                </Text>
+            }
+        </Box>
+    </>
     );
 }
 

@@ -1,3 +1,4 @@
+import Layout from '@/components/design-system/layout'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import '@/styles/globals.css'
@@ -27,9 +28,9 @@ const theme = extendTheme({ colors: lightColors })
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <Layout background='brand.backgroundSecondary'>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
   )
 }
