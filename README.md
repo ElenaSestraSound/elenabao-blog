@@ -8,4 +8,4 @@ This is a personal blog project. It still working progress but fully functional.
 ## Tech Stack
 - [Next](https://github.com/vercel/next.js) - [React](https://github.com/facebook/react) - [Typescript](https://github.com/microsoft/TypeScript)
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - [ChakraUI](https://www.w3.org/Style/CSS/Overview.en.html) - [Emotion](https://github.com/emotion-js/emotion)
-- [Sanity](https://www.sanity.io/)https://www.sanity.io/)
+- [Sanity](https://www.sanity.io/)
